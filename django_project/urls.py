@@ -61,6 +61,7 @@ urlpatterns = [
         name="password_reset_complete",
     ),
     path("", include("blog.urls")),
+    path("invention/", include("invention.urls")),
 ]
 
 

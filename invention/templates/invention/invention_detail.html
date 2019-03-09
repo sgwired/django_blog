@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <small class="text-muted">{{ object.date_created | date:'F d, Y' }}</small>
+            {% if object.inventor == user %}
+            <div>
+                <a href="{% url 'invention-update' object.id %}" class="btn btn-secondary mt-1 mb-1">Update</a>
+                <a href="{% url 'invention-delete' object.id %}" class="btn btn-danger mt-1 mb-1">Delete</a>
+            </div>
+            {% endif %}
+        </div>
+        <h2 class="article-title">{{ object.title }}</h2>
+        <p class="article-content">{{ object.description }}</p>
+    </div>
+</article>
+{% endblock content %}
