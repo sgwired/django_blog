@@ -5,7 +5,7 @@
 <article class="media content-section">
     <div class="media-body">
         <div class="article-metadata">
-            <a class="mr-2" href="{% url 'user-inventions' invention.author.username %}">{{ invention.author }}</a>
+            <a class="mr-2" href="{% url 'user-inventions' invention.inventor.username %}">{{ invention.inventor }}</a>
             <small class="text-muted">{{ invention.date_created | date:'F d, Y' }}</small>
         </div>
         <h2><a class="article-title" href="{% url 'invention-detail' invention.id %}">{{ invention.title }}</a></h2>
